@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is used to view hotel offer that is being consumed from:
 
-Things you may want to cover:
+https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel
 
-* Ruby version
+Note the following:
 
-* System dependencies
+* The data is being viewed without any pagination (the whole list is being shown).
 
-* Configuration
+* No caching level is provided (each time the user tries to view the data, we will call the API to retrieve the data from.)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Not all the search filter queries is being used.
