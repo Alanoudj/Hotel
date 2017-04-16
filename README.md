@@ -9,5 +9,3 @@ Note the following:
 * The data is being viewed without any pagination (the whole list is being shown).
 
 * No caching level is provided (each time the user tries to view the data, we will call the API to retrieve the data from.)
-
-* Not all the search filter queries is being used.
