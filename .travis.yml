@@ -1,5 +1,12 @@
 language: ruby
 
+sudo: false
+
+before_install:
+  - "rm Gemfile.lock"
+  - "gem update --system"
+  - "gem update bundler"
+
 script:
   - export RAILS_ENV=test
   - bundle exec rspec ./spec --color --format documentation --require spec_helper --require rails_helper
