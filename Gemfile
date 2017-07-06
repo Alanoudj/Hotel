@@ -37,6 +37,21 @@ gem 'jbuilder', '~> 2.5'
 gem 'json'
 
 gem 'httparty'
+
+# Used with unit testing
+gem 'database_cleaner'
+gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+
+# Used to validate the Date
+gem 'date_validator'
+
+# Bootstrap provides CSS stylesheets and JavaScript code for the visual design of websites.
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
