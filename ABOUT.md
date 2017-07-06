@@ -40,7 +40,7 @@ This framework has tow main features that will help you to build web application
   ```
     attr_accessor :region_id
   ```
-    And the two methods will be crated to be used:
+  And the two methods will be crated to be used:
 
   * Getter Method
   ```
