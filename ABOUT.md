@@ -30,8 +30,9 @@ No Data avaliable with the given search" text will be shown.
 
 I have been working with this framework for one year now as a Back End engineer and I think it's one of the most effective fremeworks that could be used to build web applications, especially if you want to implement your website without any complications and with a short time of period.
 
-This framework has tow main features that will help you to build web applications easily:
-1- DRY: Don't repeat yourself.
+This framework is an MVC framework that has two main features that will help you to build web applications easily:
+1- DRY: Don't repeat yourself (which means that you don't need to write the same information over and over again).
+
   A- you don't need to re-write things so if you need to create a setter and getter
     method to your attribute you only need to use attr_accessor method with the attribute name:
 
@@ -66,5 +67,6 @@ This framework has tow main features that will help you to build web application
 2- Convention over configuration.
   if you want to creat a new table (users) your model name will be User and it will create the table as plural in the database   for you.
 
+* Note that his project has been built and tested in Travis-CI: https://travis-ci.org/
 
 * The main problem that faced me in this application was building the Front End side (User interface), because I've been working with ROR as a Back End Engineer where all the responses I've created was JSON APIs and I never worked with HTML pages or CSS to build user interface.
