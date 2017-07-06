@@ -1,5 +1,5 @@
 language: ruby
-before_install:
-  - gem update bundler
 
-script: bundle exec rspec ./spec
+script:
+  - export RAILS_ENV=test
+  - bundle exec rspec ./spec --color --format documentation --require spec_helper --require rails_helper

@@ -5,7 +5,7 @@
 
   https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel
 
-When the user visits the website, he'll be redirected to the offer page which contains query param search filters that will allow the user to find the best deals based on the required search filter and then when he clicks search, the request will be sent to the ROR application:
+When the user visits the website, he'll be redirect to the offer page which contains query param search filters that will allow the user to find the best deals based on the required search filter and then when he clicks search, the request will be sent to the Ruby on Rails application:
 
 1- The request will be routed to the offers controller.
 
@@ -31,33 +31,40 @@ No Data avaliable with the given search" text will be shown.
 I have been working with this framework for one year now as a Back End engineer and I think it's one of the most effective fremeworks that could be used to build web applications, especially if you want to implement your website without any complications and with a short time of period.
 
 This framework has tow main features that will help you to build web applications easily:
-  1- DRY: Don't repeat yourself.
+1- DRY: Don't repeat yourself.
+  A- you don't need to re-write things so if you need to create a setter and getter
+    method to your attribute you only need to use attr_accessor method with the attribute name:
 
-    A- you don't need to re-write things so if you need to create a setter and getter
-        method to your attribute you only need to use attr_accessor method with the attribute name:
+  If you want to create those methods to region_id atribute you only need to do the following: 
 
-       If you want to create those methods to region_id atribute you only need to do the following: attr_accessor :destination_name, :region_id
-        And the two methods will be crated to be used:
+  ```
+    attr_accessor :region_id
+  ```
+  And the two methods will be crated to be used:
 
-        # Getter Method
-        # def region_id
-        #   @region_id
-        # end
+  * Getter Method
+  ```
+    def region_id
+      @region_id
+    end
+  ```
 
-        # Setter Method
-        # def region_id= value
-        #   @region_id = value
-        # end
+  * Setter Method
+  ```
+    def region_id= value
+      @region_id = value
+    end
+  ```
 
-    B- This the same for validating the attribute you need to use validates method
-       with the attribute name and the validation.
+  B- This the same for validating the attribute you need to use validates method
+     with the attribute name and the validation.
 
-       Ex: validate region_id to be number only:
+     Ex: validate region_id to be number only:
 
-       validates :region_id, numericality: { greater_than: 0 }, allow_blank: true
+     validates :region_id, numericality: { greater_than: 0 }, allow_blank: true
 
-  2- Convention over configuration.
-    if you want to creat a new table (users) your model name will be User and it will create the table as plural in the database for you.
+2- Convention over configuration.
+  if you want to creat a new table (users) your model name will be User and it will create the table as plural in the database   for you.
 
 
-* The mean problem that faced me in this application was building the Front End side (User interface), because I've been working with ROR as a Back End Engineer where all the responses I've created was JSON APIs and I never returned any HTML pages.
+* The main problem that faced me in this application was building the Front End side (User interface), because I've been working with ROR as a Back End Engineer where all the responses I've created was JSON APIs and I never worked with HTML pages or CSS to build user interface.
