@@ -1,7 +1,8 @@
 # README
 
-# Fattesh Hotels [![Build Status](https://api.travis-ci.org/Alanoudj/Hotel.svg?branch=master)](
-https://travis-ci.org/Alanoudj/Hotel)
+# Fattesh Hotels
+
+[![Build Status](https://api.travis-ci.org/Alanoudj/Hotel.svg?branch=master)](https://travis-ci.org/Alanoudj/Hotel)
 
 
 Fattesh Hotels is used to view hotel offers that is being consumed from:
