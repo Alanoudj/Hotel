@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'hotels#search'
-  get 'search', to: 'hotels#search'
+  resources :offers, only: [:index]
 
-  match "*path", to: redirect('/'), via: :all
+  root 'offers#index'
+  match "*path", to: 'application#routing_error', via: :all
 end
