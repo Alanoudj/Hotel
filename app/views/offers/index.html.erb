@@ -1,0 +1,129 @@
+<!-- Search Query Params -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <%= form_for(offers_path, method: "get", id: "search-form") do %>
+      <br/><br/>
+
+      <div class='col-md-5'>
+        <%= text_field_tag :destination_name, params[:destination_name], placeholder: "Destination Name"%><br/><br/>
+      </div>
+
+      <div class='col-md-5'>
+        <%= number_field_tag :region_id, params[:region_id], placeholder: "Region ID", min: 1%><br/><br/>
+      </div>
+
+      <div class='col-md-5'>
+        <%= number_field_tag :min_star_rating, params[:min_star_rating], placeholder: "Min Star Rating", min: 1, max: :max_star_rating %><br/><br/>
+      </div>
+
+       <div class='col-md-5'>
+         <%= number_field_tag :max_star_rating, params[:max_star_rating], placeholder: "Max Star Rating", min: 1 %><br/><br/>
+      </div>
+
+      <div class='col-md-5'>
+        <div class='input-group date' id='datetimepicker1'>
+            <%= text_field_tag :min_start_date, params[:min_start_date], placeholder:
+            'Min Trip Start Date', :class => 'form-control' %>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div><br/><br/>
+      </div>
+
+      <div class='col-md-5'>
+        <div class='input-group date' id='datetimepicker2'>
+             <%= text_field_tag :max_start_date, params[:max_start_date], placeholder:
+            'Max Trip Start Date', :class => 'form-control' %>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div><br/></br>
+      </div>
+
+      <div class='col-md-5'>
+        <%= submit_tag("Search", { :name => nil ,:align => "center", :class=>"btn btn-primary" })%>
+        <%= submit_tag("Clear", { :name => 'reset', :type => "reset", :class=>"btn btn-primary"}) %>
+         <br/></br>
+      </div>
+    <% end %>
+  </div>
+</nav>
+
+<!-- Hotels Info-->
+<% if @deals.present? %>
+  <% @deals.each do |deal| %>
+    <div class="container" style="margin-top:120px;">
+      <div class="row">
+        <!-- Product Info-->
+        <div class="col-xs-12 col-sm-6">
+          <h3> <%= deal.hotel_name %></h3>
+          <h3> <%= deal.hotel_destination %></h3>
+
+          <%= link_to(image_tag(deal.image_url, alt: deal.hotel_name, style: "width:300px; height:150px;", :class => "img-responsive product-image-large"), deal.hotel_url, target: "_blank").html_safe%>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="well row">
+            <div class="input-group", style="text-align: center; color: #337ab7;">
+                <%= deal.booked_people_count %> of pepole booked this hotel
+            </div>
+
+            <div class="input-group", style="text-align: center; color: #337ab7">
+                <%= deal.viewing_people_count %> of pepole viewed this hotel
+            </div>
+
+            <div class="input-group">
+              Was <span style="text-decoration: line-through; color: #337ab7;"><%= deal.currency %><%= deal.original_price%> </span>  Now
+              <span style="color: #337ab7;"> <%= deal.currency %><%= deal.average_price%>
+            </div>
+          </div>
+
+          <h4>Description</h4>
+          <p> <%= deal.hotel_description %></p>
+
+          <div class="btn-group" role="group" aria-label="..." style="margin-bottom:10px;">
+              <a href="<%= deal.hotel_url %>"><button type="button" class="btn btn-primary"><span class="fa fa-close"></span>&nbsp;View Deal</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+
+  <!-- Show error message if any -->
+  <nav class="navbar navbar-default">
+    <div class="container"> <br/>
+      <% if @offer_params.errors.any? %>
+          <h4><%= pluralize(@offer_params.errors.count, "error") %> prohibited this search from being continued:</h4>
+          <% @offer_params.errors.full_messages.each do |message| %>
+            <p style="color: #337ab7;"> <%= message %> </p>
+          <% end %>
+      <% else %>
+        <p style="text-align: center; font-size: 1.2em; font-weight: normal;
+          color: #337ab7">
+            No Data avaliable with the given search
+        </p>
+      <% end %>
+    </div>
+  </nav>
+<% end %>
+
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker({
+      format: 'l',
+      format: 'YYYY-MM-DD'
+    });
+    $('#datetimepicker2').datetimepicker({
+        useCurrent: false,
+        format: 'l',
+        format:'YYYY-MM-DD'
+    });
+    $("#datetimepicker1").on("dp.change", function (e) {
+        $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+    });
+    $("#datetimepicker2").on("dp.change", function (e) {
+        $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+    });
+  });
+</script>
