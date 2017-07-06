@@ -70,3 +70,5 @@ This framework is an MVC framework that has two main features that will help you
 * Note that his project has been built and tested in Travis-CI: https://travis-ci.org/
 
 * The main problem that faced me in this application was building the Front End side (User interface), because I've been working with ROR as a Back End Engineer where all the responses I've created was JSON APIs and I never worked with HTML pages or CSS to build user interface.
+
+* It was my first time to work with Travis to run my tests and also working with Bootstrap framework to create the Fron end side and the UI.
