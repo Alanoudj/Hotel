@@ -14,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Before using this project , you will need:
+Before using this project, you will need:
 
 ```
 The Ruby language (version 2.3.3)
@@ -22,7 +22,7 @@ Rails (versions 5.0.2)
 ```
 To install Ruby on Rails in your local machine, it is better to use Ruby Version Manager (RVM):
 
-RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems(you can find all instruction in this link: https://rvm.io/).
+RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems (you can find all instruction in this link: https://rvm.io/).
 
 Install GPG keys, As a first step install mpapis public key used to verify installation package to ensure security:
 
@@ -45,7 +45,7 @@ This installation assume that you're working on Linux OS.
 $ git clone git@github.com:Alanoudj/Hotel.git
 ```
 
-2- Change your current eorking directory:
+2- Change your current working directory:
 
 ```
 $ cd Hotel
@@ -57,7 +57,7 @@ $ cd Hotel
 $ gem install rails
 ```
 
-4- Install all required ruby gems and their dependancies:
+4- Install all required ruby gems and their dependencies:
 
 ```
 $ bundle install
