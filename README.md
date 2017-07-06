@@ -1,6 +1,6 @@
 # README
 
-# Fattesh Hotels
+# Fattesh Hotels (https://api.travis-ci.org/Alanoudj/Hotel.svg?branch=master)
 
 Fattesh Hotels is used to view hotel offers that is being consumed from:
 https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel
