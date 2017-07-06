@@ -37,24 +37,24 @@ This framework has tow main features that will help you to build web application
 
   If you want to create those methods to region_id atribute you only need to do the following: 
 
-    ```
-      attr_accessor :region_id
-    ```
+  ```
+    attr_accessor :region_id
+  ```
     And the two methods will be crated to be used:
 
-    * Getter Method
-    ```
-      def region_id
-        @region_id
-      end
-    ```
+  * Getter Method
+  ```
+    def region_id
+      @region_id
+    end
+  ```
 
-    * Setter Method
-    ```
-      def region_id= value
-        @region_id = value
-      end
-    ```
+  * Setter Method
+  ```
+    def region_id= value
+      @region_id = value
+    end
+  ```
 
   B- This the same for validating the attribute you need to use validates method
      with the attribute name and the validation.
