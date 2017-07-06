@@ -15,7 +15,7 @@ class QueryParams
 
   validate do
     if max_start_date.present?
-      if (QueryParams.invalid_date?(min_start_date))
+      if (QueryParams.invalid_date?(max_start_date))
         errors.add(:max_start_date, 'is not a valid date')
       end
     end

@@ -1,23 +1,23 @@
 <!-- Search Query Params -->
 <nav class="navbar navbar-default">
-  <div class="container">
+    <h1 style="text-align: center; color: #337ab7;"> Hotel search </h1>
     <%= form_for(offers_path, method: "get", id: "search-form") do %>
       <br/><br/>
 
       <div class='col-md-5'>
-        <%= text_field_tag :destination_name, params[:destination_name], placeholder: "Destination Name"%><br/><br/>
+        <%= text_field_tag :destination_name, params[:destination_name], placeholder: "  Destination Name"%><br/><br/>
       </div>
 
       <div class='col-md-5'>
-        <%= number_field_tag :region_id, params[:region_id], placeholder: "Region ID", min: 1%><br/><br/>
+        <%= number_field_tag :region_id, params[:region_id], placeholder: "  Region ID", min: 1%><br/><br/>
       </div>
 
       <div class='col-md-5'>
-        <%= number_field_tag :min_star_rating, params[:min_star_rating], placeholder: "Min Star Rating", min: 1, max: :max_star_rating %><br/><br/>
+        <%= number_field_tag :min_star_rating, params[:min_star_rating], placeholder: "  Min Star Rating", min: 1%><br/><br/>
       </div>
 
        <div class='col-md-5'>
-         <%= number_field_tag :max_star_rating, params[:max_star_rating], placeholder: "Max Star Rating", min: 1 %><br/><br/>
+         <%= number_field_tag :max_star_rating, params[:max_star_rating], placeholder: "  Max Star Rating", min: 1%><br/><br/>
       </div>
 
       <div class='col-md-5'>
@@ -99,11 +99,15 @@
             <p style="color: #337ab7;"> <%= message %> </p>
           <% end %>
       <% else %>
-        <p style="text-align: center; font-size: 1.2em; font-weight: normal;
-          color: #337ab7">
+        <p style="font-size: 1.2em; font-weight: normal; color: #337ab7">
             No Data avaliable with the given search
         </p>
       <% end %>
+        <div class="btn-group" role="group" style="margin-bottom:10px;">
+          <a href="<%= offers_path %>">
+            <button type="button" class="btn btn-primary"><span class="fa fa-close"></span>&nbsp;Back to all deals</button></br>
+          </a>
+        </div>
     </div>
   </nav>
 <% end %>
